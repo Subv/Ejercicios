@@ -99,6 +99,7 @@
     <Compile Include="Project Euler\Euler5.cs" />
     <Compile Include="Project Euler\Euler52.cs" />
     <Compile Include="Project Euler\Euler55.cs" />
+    <Compile Include="Project Euler\Euler59.cs" />
     <Compile Include="Project Euler\Euler6.cs" />
     <Compile Include="Project Euler\Euler7.cs" />
     <Compile Include="Project Euler\Euler8.cs" />
@@ -133,6 +134,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Misc\euler59_cipher.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
