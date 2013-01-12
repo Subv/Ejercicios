@@ -13,9 +13,11 @@ namespace Ejercicios
         /// <summary>
         /// Calls the "Run" method inside the class specified in name
         /// </summary>
-        /// <param name="name">The name of the exersise which will be run</param>
-        static void RunExersise(string name)
+        /// <param name="name">The name of the exercise which will be run</param>
+        static void RunExercise(string name)
         {
+            Stopwatch total = new Stopwatch();
+            total.Start();
             // Get the current assembly
             Assembly asm = Assembly.GetExecutingAssembly();
             // Get all the classes in the assembly
@@ -32,24 +34,31 @@ namespace Ejercicios
                                                     BindingFlags.DeclaredOnly |
                                                     BindingFlags.Public | BindingFlags.NonPublic |
                                                     BindingFlags.Instance | BindingFlags.CreateInstance, null, null, null);
+                        Stopwatch watch = new Stopwatch();
+                        watch.Start();
                         // Call the "Run" member
                         type.InvokeMember("Run",
                                         BindingFlags.DeclaredOnly |
                                         BindingFlags.Public | BindingFlags.NonPublic |
                                         BindingFlags.Instance | BindingFlags.InvokeMethod, null, obj, null);
-                        // Profit
+                        watch.Stop();
+                        total.Stop();
+                        // Report the elapsed time
+                        Console.WriteLine("Finished working, took {0} ms to invoke and execute the Run method, and {1} ms total.", watch.ElapsedMilliseconds, total.ElapsedMilliseconds);
+                        return;
                     }
                 }
             }
+            Console.WriteLine("Error: Exercise {0} not found", name);
         }
+
         static void Main(string[] args)
         {
-            // Exercises from: http://www.dreamincode.net/forums/topic/78802-martyr2s-mega-project-ideas-list/
-            Console.WriteLine("Escriba el nombre de la clase que quiere correr \n");
+            Console.WriteLine("Type in the class name that you want to run.");
             string x;
             while((x = Console.ReadLine()) != "exit")
             {
-                RunExersise(x);
+                RunExercise(x);
                 //Scheduler.ScheduleEvent(null, null, 0);
                 //Console.ReadLine();
             }
