@@ -10,10 +10,7 @@ namespace Ejercicios.Project_Euler
     {
         public void Run()
         {
-            for (BigInteger i = 100; ; ++i)
-            {
-
-            }
+            
         }
     }
 }

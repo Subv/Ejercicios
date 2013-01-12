@@ -12,12 +12,12 @@ namespace Ejercicios.Project_Euler
             return (n % 2) == 0;
         }
 
-        public void DoFibonacci(ulong x)
+        public void DoFibonacci()
         {
             ulong a = 0;
             ulong b = 1;
             ulong sum = 0;
-            for (ulong i = a; i <= x; ++i)
+            for (ulong i = a; ; ++i)
             {
                 //Console.Write("{0} ", a);
                 if (a >= 4000000)
@@ -33,11 +33,7 @@ namespace Ejercicios.Project_Euler
 
         public void Run()
         {
-            Console.WriteLine("Running {0}", GetType().Name);
-            ulong x;
-            if (!ulong.TryParse(Console.ReadLine(), out x))
-                return;
-            DoFibonacci(x);
+            DoFibonacci();
             GC.Collect();
         }
     }

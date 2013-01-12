@@ -26,8 +26,6 @@ namespace Ejercicios.Project_Euler
             {
                 string s = unordered[(int)i];
                 ulong value = 0;
-                if (i == 937)
-                    Console.WriteLine("COLIN");
                 foreach (var c in s.ToCharArray())
                     value += Convert.ToUInt32(c) - 64;
                 sum += (i+1) * value;

@@ -12,7 +12,7 @@ namespace Ejercicios
         // Current State: Complete
         public void Run()
         {
-            Console.WriteLine("Running {0}",GetType().Name);
+            Console.WriteLine("Type number");
             int n;
             if (!int.TryParse(Console.ReadLine(), out n))
                 return;

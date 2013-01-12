@@ -20,13 +20,10 @@ namespace Ejercicios.Project_Euler
 
         public void Run()
         {
-            Console.WriteLine("Running {0}", GetType().Name);
             ulong sum = 0;
             List<ulong> added = new List<ulong>();
             for (ulong i = 1; i < 10000; ++i)
             {
-                if (i == 220)
-                    Console.WriteLine("220!");
                 if (added.Contains(i))
                     continue;
                 ulong num = GetSumDivisors(i);
