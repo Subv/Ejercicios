@@ -15,6 +15,7 @@ namespace Ejercicios
         /// <param name="name">The name of the exercise which will be run</param>
         static void RunExercise(string name)
         {
+            bool runall = name == "runall";
             Stopwatch total = new Stopwatch();
             total.Start();
             // Get the current assembly
@@ -23,7 +24,7 @@ namespace Ejercicios
             foreach (Type type in asm.GetTypes())
             {
                 // If the name match
-                if ((name == "runall" && type.Name.ToLower().Contains("euler") && !type.IsSubclassOf(typeof(System.Windows.Forms.Form))) || (type.Name.ToLower() == name.ToLower()))
+                if ((runall && type.Name.ToLower().Contains("euler") && !type.IsSubclassOf(typeof(System.Windows.Forms.Form))) || (type.Name.ToLower() == name.ToLower()))
                 {
                     // If it has a member called "Run"
                     if (type.GetMembers().Where(m => m.Name == "Run") != null)
@@ -45,11 +46,13 @@ namespace Ejercicios
                         total.Stop();
                         // Report the elapsed time
                         Console.WriteLine("Finished working, took {0} ns ({1} ms) to invoke and execute the Run method, and {2} ns ({3} ms) total.\n", watch.Elapsed.TotalMilliseconds * 1000000, watch.ElapsedMilliseconds, watch.Elapsed.TotalMilliseconds * 1000000, watch.ElapsedMilliseconds);
-                        //return;
+                        if (!runall)
+                            return;
                     }
                 }
             }
-            //Console.WriteLine("Error: Exercise {0} not found", name);
+            if (!runall)
+                Console.WriteLine("Error: Exercise {0} not found", name);
         }
 
         static void Main(string[] args)
