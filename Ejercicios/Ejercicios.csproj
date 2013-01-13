@@ -83,6 +83,7 @@
     <Compile Include="Project Euler\Euler16.cs" />
     <Compile Include="Project Euler\Euler2.cs" />
     <Compile Include="Project Euler\Euler20.cs" />
+    <Compile Include="Project Euler\Euler202.cs" />
     <Compile Include="Project Euler\Euler205.cs" />
     <Compile Include="Project Euler\Euler21.cs" />
     <Compile Include="Project Euler\Euler22.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Project Euler\Euler220Form.Designer.cs">
       <DependentUpon>Euler220Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Project Euler\Euler251.cs" />
     <Compile Include="Project Euler\Euler4.cs" />
     <Compile Include="Project Euler\Euler43.cs" />
     <Compile Include="Project Euler\Euler48.cs" />
@@ -109,6 +111,7 @@
     <Compile Include="Reinas.cs" />
     <Compile Include="Scheduler.cs" />
     <Compile Include="TilePrice.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
