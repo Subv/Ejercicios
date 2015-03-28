@@ -94,6 +94,7 @@
     <Compile Include="Project Euler\Euler220Form.Designer.cs">
       <DependentUpon>Euler220Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Project Euler\Euler25.cs" />
     <Compile Include="Project Euler\Euler251.cs" />
     <Compile Include="Project Euler\Euler4.cs" />
     <Compile Include="Project Euler\Euler43.cs" />
